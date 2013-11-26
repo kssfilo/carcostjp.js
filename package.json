@@ -1,0 +1,20 @@
+{
+  "name": "carcostjp",
+  "description": "A class to help calculating cost of car (such as tax or fuel or depreciation) of Japan."
+  "main": "carcostjp.js",
+  "version": "0.0.1",
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "tags": [
+    "car",
+  ],
+  "author": {
+    "name": "kssfilo"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "_id": "carcostjp@0.0.1",
+  "_from": "carcostjp"
+}
