@@ -8,7 +8,8 @@ function CarCostJp(specs)
 		isEco:false,     //エコカーか
 		isTrack:false,   //貨物か
 		carryKg:1000,    //貨物の場合の積載量kg
-		passedYears:0    //経過年数
+		passedYears:0,   //経過年数
+		gettingTax:-1    //取得税(-1の場合は新車として計算) 
 	};
 	for(var i in specs)defaults[i]=specs[i];
 	specs=defaults;
@@ -20,6 +21,12 @@ function CarCostJp(specs)
 	this.isTrack=function(){return(specs.isTrack)};
 	this.carryKg=function(){return(specs.carryKg)};
 	this.passedYears=function(){return(specs.passedYears)};
+	this.gettingTax=function(){
+		if(specs.gettingTax==-1)
+			return(Math.round(this.price()*0.9*(this.isK()?0.03:0.05)));
+		else
+			return(specs.gettingTax)
+	}
 }
 
 CarCostJp.prototype=
@@ -62,10 +69,6 @@ CarCostJp.prototype=
 			i=Math.min(9,i);
 			return(tbl[i]);
 		}
-	},
-	gettingTax:function()
-	{
-		return(Math.round(this.price()*(this.isK()?0.03:0.05)));
 	},
 	weightTax:function()
 	{

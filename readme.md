@@ -23,7 +23,8 @@ node.js/ブラウザ両方に対応します。
 			isEco:false,     //エコカーか
 			isTrack:false,   //貨物か
 			carryKg:1000,    //貨物の場合の積載量kg
-			passedYears:0    //経過年数
+			passedYears:0,    //経過年数
+			gettingTax:-1    //取得税(-1の場合は新車として計算) 
 		});
 		console.log(carcost.gettingTax());       //取得税
 		console.log(carcost.weightTax());        //重量税年
@@ -47,3 +48,6 @@ node.js/ブラウザ両方に対応します。
 
 [ハイブリッドのエコカーに買い替えるのは本当に得？ 自動車コスト計算機](http://kanasys.com/tech/98)
 
+##履歴
+
+13/12/13:取得税の計算方法の誤りを修正。中古の場合、コンストラクタで設定出来る様にしました。
